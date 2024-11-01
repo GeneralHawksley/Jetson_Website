@@ -1,0 +1,224 @@
+<!DOCTYPE html> <!--Code Type-->
+<html lang="en"> <!--Language setting-->
+
+<head> <!-- Document Setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jetson One</title> <!-- Page Title -->
+  <link rel="stylesheet" href="style.css"> <!-- CSS Reference -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"> <!-- Shoelace Style Sheet Reference -->
+</head>
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/split-type"></script> <!-- GSAP, Split Type and Scroll Trigger Reference -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-content"> <!-- Nav Bar Setup -->
+        <img src="Images/jetson_logo.webp" alt="Company Logo" class="logo"> <!-- Logo Image -->
+        <div class="nav-buttons">
+            <a href="#" id="homeButton">HOME</a> <!-- Home Nav Button -->
+            <a href="#information">INFORMATION</a> <!-- Info Nav Button -->
+            <a href="#news">NEWS</a> <!-- News Nav Button -->
+            <a class="pre-order" href="#preorder">PRE-ORDER</a> <!-- Pre-Order Nav Button -->
+        </div>
+    </div>
+</nav>
+
+  <!-- Section 1: Header Image and text -->
+   <div id="home">
+    <iframe class="back-video"
+    src="https://youtube.com/embed/ktCWa9XUrck?autoplay=1&mute=1">
+    </iframe> <!-- Youtube Video Background Setup -->
+    
+    <div class="header-section">
+        <div id="header1">The first affordable EVTOL on the market.</div>
+    </div> <!-- Header Text Setup -->
+</div>
+
+  <!-- Section 2: Information Boxes and Pop Up Gallery (FS LIGHTBOX GALLERY)-->
+  <div id="information" class="info-section">
+      <div class="info-box1"> <!--  -->
+        <a data-fslightbox="info-section" href="images/front_frame.webp"> <!-- Gallery Images Formatting -->
+          <img src="images/front_frame.webp" alt="Info 1"> <!-- Image Title and Refrence -->
+        </a>
+          <p>Hands free hover and emergency functions</p>
+      </div>
+      <div class="info-box2">
+        <a data-fslightbox="info-section" href="images/back_frame.webp">
+          <img src="images/back_frame.webp" alt="Info 2">
+        </a>
+          <p>Redundant Battery Propulsion System</p>
+      </div>
+      <div class="info-box3">
+        <a data-fslightbox="info-section" href="images/props.webp">
+            <img src="images/props.webp" alt="Info 3">
+          </a>
+          <p>Can fly safely with the loss of one motor</p>
+      </div>
+      <div class="info-box4">
+        <a data-fslightbox="info-section" href="images/seat.webp">
+            <img src="images/seat.webp" alt="Info 4">
+          </a>
+          <p>Ballistic parachute with rapid deployment time</p>
+      </div>
+      <div class="info-box5">
+        <a data-fslightbox="info-section" href="images/frame.webp">
+            <img src="images/frame.webp" alt="Info 5">
+          </a>
+          <p>Race car-inspired Spaceframe safety cell design</p>
+      </div>
+      <div class="info-box6">
+        <a data-fslightbox="info-section" href="images/back.png">
+            <img src="images/back.png" alt="Info 6">
+          </a>
+          <p>Radar sensor driven auto landing system</p>
+      </div>
+
+      <sl-drawer id="tech-specs"  class="drawer-overview"> <!-- Tech Specs Pop Up Setup -->
+        <br> <br> <br> <br> <br> <!-- Line Spacing -->
+        Tech Specs <!-- Title -->
+        <br> <br> <br>
+        Jetson ONE Mass Incl. Batteries:  <!-- Info -->
+        <br>  
+        115kg / 253lbs
+        <br>  <br>  
+        Empty Mass:
+        <br>  
+        55kg / 121lbs
+        <br>  <br>  
+        Dimensions:
+        <br>  
+        2700x1600x1120mm / 8.86x5.25x3.67ft
+        <br>  <br>  
+        Width when folded:
+        <br>  
+        980 mm / 3.22 ft
+        <br>  <br>  
+        Flight time:
+        <br>  
+        20 min (Approx)
+        <br>  <br>  
+        Top level flight speed:
+        <br>  
+        Software limited to 102km/h (63mph)
+        <br>  <br>  
+        Maximum pilot weight:
+        <br>  
+        95KG / 210LBS
+        <br>  <br>  
+        Service ceiling:
+        <br>  
+        Above 1500 feet agl
+        <br>  <br>  
+        Flight controls:
+        <br>  
+        4 Axis joystick
+        <br>  <br>  
+        Battery type:
+        <br>  
+        High discharge lithium-ION
+        <br>  <br>  
+        Chassis type:
+        <br>  
+        All-aluminium space airframe
+        <br>  <br>  
+        Motor type:
+        <br>  
+        High Performance Electric Brushless
+        <sl-button slot="footer" variant="primary">Close</sl-button> <!-- Close Button if x is Unavalable -->
+      </sl-drawer>
+      
+      <sl-button>Tech Specs</sl-button> <!-- Shoelace Component 1: Button for Drawer Access -->
+    </div>
+
+  <!-- Section 3: News -->
+  <section id="news" class="gallery-section"> <!-- News Image Grid Setup -->
+    <div class="gallery-content">
+      <div class="gallery-text" id="gallery-text">
+        <h2>News</h2>
+        <p>Select an image to find out the latest at Jetson.</p>
+      </div>
+      <div class="gallery-images"> <!-- Image List -->
+        <img src="images/news_1.webp" alt="Gallery Image 1" onclick="updateGalleryText(1)"> <!-- Javascript Text Change Reference -->
+        <img src="images/news_2.webp" alt="Gallery Image 2" onclick="updateGalleryText(2)">
+        <img src="images/news_3.webp" alt="Gallery Image 3" onclick="updateGalleryText(3)">
+        <img src="images/news_4.webp" alt="Gallery Image 4" onclick="updateGalleryText(4)">
+      </div>
+    </div>
+  </section>
+
+  <sl-alert variant="warning" open closable class="alert-closable"> <!-- Shoelace Component 2: Closable Pre-Order Alert -->
+    <sl-icon slot="icon" name="info-circle"></sl-icon> <!--  -->
+    <strong>Final Call for 2024 Pre-Orders</strong><br>
+    Only 32 Jestson One positions left for the 2024 pre-order round!
+  </sl-alert>
+
+  <!-- Section 4: Pre-Order -->
+  <section id="preorder" class="preorder-section"> 
+      <sl-button size="large"  variant="success" id="preorder-button" onclick="displayOrderForm()">Pre-Order Now</sl-button> <!-- Shoelace Component 3: Pre-Order Button -->
+      <div id="order-form" style="display: none;"> <!-- Pre-Order Form Setup, Not Visable Untill Clicked -->
+        <h3>Order Your EVTOL</h3>
+        <form> <!-- Form Component -->
+            <label for="name">Name:</label> <!-- Label -->
+            <input type="text" id="name" name="name" required> <!-- Input type -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div class="animation-form">
+              <sl-animation name="rubberBand" duration="1000" iterations="1"> <!-- Shoelace Component 4: Submit Button with Bounce Anim Upon Click -->
+                <sl-button size="large" variant="success" outline id="submit-button" type="submit">Submit Order</sl-button> <!-- Shoelace Button Formatting -->
+              </sl-animation>
+            </div>
+        </form>
+    </div>
+      <svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+      viewBox="0 0 456.527 456.527" xml:space="preserve"> <!-- SVG File Import -->
+        <g>
+          <g>
+            <path d="M455.768,310.971c-5.397-38.312-99.612-46.241-166-43.953c0.251-8.286-0.87-16.753-3.551-25.096
+              c-5.628-17.515-17.125-31.5-31.61-40.514c23.898-43.029,41.406-105.359,25.39-131.664c-29.209-47.972-86.606-66.331-128.2-41.005
+              c-33.324,20.29-2.528,111.288,26.057,171.344c-21.346,12.279-35.041,34.285-37.108,58.307
+              c-49.552,1.636-113.802,19.484-128.081,47.388c-25.585,49.999-11.182,108.514,32.17,130.697
+              c34.075,17.436,93.831-53.34,130.271-108.71c18.068,11.468,40.906,15.129,62.873,8.071c4.717-1.516,9.172-3.467,13.351-5.777
+              c29.13,40.911,83.713,86.965,116.038,82.411C422.983,404.636,462.562,359.193,455.768,310.971z M224.783,294.765
+              c-16.571,5.324-34.321-3.793-39.645-20.364c-5.324-16.571,3.793-34.321,20.364-39.645c16.571-5.325,34.321,3.792,39.645,20.364
+              C250.471,271.691,241.354,289.441,224.783,294.765z"/>
+          </g>
+        </g>
+      </svg>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer>
+      <img src="images/jetson_logo.webp" alt="Company Logo" class="footer-logo"> <!-- Footer Logo -->
+      <p>Jetson, Inc
+        555 Bryant Street
+        Palo Alto, CA 94301
+        USA</p>
+      <p>Contact: sales@jetson.com</p>
+      <div class="social-media"> <!-- Social Media Grouping -->
+          <a href="https://www.facebook.com/jetsonaero">Facebook</a> <!-- Social Media Reference Links -->
+          <a href="https://www.youtube.com/channel/UCJNoPkgW0KSKzBHgFJ3VRtQ">Youtube</a>
+          <a href="https://www.facebook.com/jetsonaero">Instagram</a>
+      </div>
+  </footer>
+
+
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script> <!-- Shoelace Module Reference -->
+  <script src="JavaScript/fslightbox.js"></script> <!-- Image Gallery Reference -->
+  <script src="JavaScript/main.js"></script> <!-- Main JavaScript File Reference -->
+  
+
+
+</body>
+
+</html>
